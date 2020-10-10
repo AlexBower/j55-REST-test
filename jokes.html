@@ -6,6 +6,7 @@
 
   <p>Current Joke</p>
 	<div id="joke">No joke</div>
+	<button onClick="window.location.reload();">Next Joke</button>
 </body>
 
 <script>
@@ -20,7 +21,7 @@
 			everything += json["setup"];
 			everything += "</p>";
 			everything += "<p><strong>Punchline: </strong>";
-			everything += `<button id="answer-button" style="padding-top: 0px" onclick='displayPunchline()'>Answer</button>`
+			everything += `<button id="answer-button" style="display: inline-block; height: 15px; padding-top: 0px; font-size: 10px;" onclick='displayPunchline()'>Answer</button>`
 			everything += `<span id="punchline" style="visibility: hidden;"></span>`
 			everything += "</p>";
 			document.getElementById("joke").innerHTML = everything;
