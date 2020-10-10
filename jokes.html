@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>XKCD</title>
+
+<body>
+
+  <p>Current Joke</p>
+	<div id="joke">No joke</div>
+</body>
+
+<script>
+  var myurl = "https://official-joke-api.appspot.com/random_joke";
+  console.log(myurl);
+  fetch(myurl)
+    .then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      console.log(json);
+			let everything = "<p><strong>Setup: </strong> ";
+			everything += json["setup"];
+			everything += "</p>";
+			everything += "<p><strong>Punchline: </strong>";
+			everything += json["punchline"];
+			everything += "</p>";
+			document.getElementById("joke").innerHTML = everything;
+    });
+</script>
+</html>
